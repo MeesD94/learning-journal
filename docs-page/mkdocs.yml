@@ -1,0 +1,6 @@
+site_name: Learning Journal
+site_url: https://localhost:8000/
+theme: windmill-dark
+nav:
+  - Home: 'index.md'
+  - Redux Basics: 'pages/redux_store.md'
