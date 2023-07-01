@@ -3,5 +3,6 @@ site_url: https://localhost:8000/
 theme: windmill-dark
 nav:
   - Home: 'index.md'
-  - Node.js: 'pages/nodeJS.md'
   - Redux Basics: 'pages/redux_store.md'
+  - Node.js: 'pages/nodeJS.md'
+  - jQuery: 'pages/jQuery.md'
