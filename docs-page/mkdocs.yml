@@ -6,3 +6,4 @@ nav:
   - Redux Basics: 'pages/redux_store.md'
   - Node.js: 'pages/nodeJS.md'
   - jQuery: 'pages/jQuery.md'
+  - Javascript Memory management: 'pages/js_memory.md'
