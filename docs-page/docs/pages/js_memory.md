@@ -207,7 +207,7 @@ nullify references to external objects within closures when they are no longer n
 
 
 ## sources
-[geeksforgeeks](https://www.geeksforgeeks.org/memory-management-in-javascript/)
-[mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_management)
-[felixgerschau](https://felixgerschau.com/javascript-memory-management/#stack-static-memory-allocation)
+[geeksforgeeks](https://www.geeksforgeeks.org/memory-management-in-javascript/)<br>
+[mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_management)<br>
+[felixgerschau](https://felixgerschau.com/javascript-memory-management/#stack-static-memory-allocation)<br>
 [auth0](https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/)
