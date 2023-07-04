@@ -12,5 +12,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "redux": "^4.2.1"
+  },
+  "exports": {
+    "import": "./dist/redux-toolkit.esm.mjs",
+    "require": "./dist/index.js"
   }
 }
