@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="../src/index.js"></script>
+    <link rel="stylesheet" href="../src/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>jQuery playground</h1>
+
+    <div class="dom-container">
+        <h2 class="m-0">DOM manipulation</h2>
+        <div>The text is manipulated after the document is ready.</div>
+
+        <div class="dom_sub_container p-1 mt-1">
+            <p>Element selector</p>
+            <div class="div_class">div with class</div>
+            <div id="third_div">div with ID</div>
+            <div data-custom="customAttribute" class="hide-element">div with attribute</div>
+        </div>
+    </div>
+
+    <div class="event-container mt-1">
+        <h2 class="m-0">Event handling & Animations</h2>
+        <div>Triggering animations.</div>
+
+        <div class="event_sub_container p-1 mt-1">
+            Move block to the right.
+            <div class="row">
+                <button id="btn-one">Start animation</button>
+                <div id="animation-one" class="animation_block"></div>
+            </div>
+
+            Move block to the right and change width in 3 seconds
+            <div class="row">
+                <button id="btn-two">Start animation</button>
+                <div id="animation-two" class="animation_block"></div>
+            </div>
+
+            <div class="row">
+                <div id="dbl-click" >Double click this text to change color</div>
+            </div>
+
+            <div class="row">
+                <div id="hover">Hover over this text to change font size </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    Write something:
+                    <input id="input-press" type="text">
+                </div>
+                <p>Keypresses: <span>0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ajax-container">
+        <h2>AJAX</h2>
+        <div>Do some AJAX requests to https://pokeapi.co/</div>
+        <div class="ajax_sub_container">
+            <div class="column">
+                Get Pokémon weight by name.
+                <div class="row">
+                    <input id="pokemon-name" type="text">
+                    <button id="get">Get weight from api</button>
+                    <div id="get-response" class="ml-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

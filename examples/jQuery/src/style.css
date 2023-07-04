@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.dom-container, .event-container, .ajax-container {
+    text-align: left;
+}
+
+.dom_sub_container, .event_sub_container, .ajax_sub_container {
+    background: #cff8ff;
+    border-radius: .5em;
+}
+
+.dom_sub_container > div {
+    margin-bottom: 1em;
+}
+
+.row {
+    display: flex;
+    width: 1000px;
+    margin-bottom: 1em;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.hide-element {
+    visibility: hidden;
+}
+
+.color-red {
+    color: red;
+}
+.m-0 {
+    margin: 0;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.ml-1 {
+    margin-left: 1em;
+   }
+
+.p-1 {
+    padding: 1em;
+}
+
+.animation_block {
+    background: black;
+    width: 50px;
+    height: 50px;
+    margin-left: .5em;
+    position: relative;
+}
