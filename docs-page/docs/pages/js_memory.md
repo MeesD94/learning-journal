@@ -206,7 +206,7 @@ closures release any unnecessary references once they are no longer required. Fo
 nullify references to external objects within closures when they are no longer needed.
 
 
-#### sources
+## sources
 [geeksforgeeks](https://www.geeksforgeeks.org/memory-management-in-javascript/)
 [mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_management)
 [felixgerschau](https://felixgerschau.com/javascript-memory-management/#stack-static-memory-allocation)

@@ -286,5 +286,5 @@ const myCustomMiddleware = (store) => (next) => (action) => {
 By creating your own middleware, you have full control over the behavior of the store and can add custom functionality, 
 such as authentication handling, caching, analytics, or any other application-specific requirements.
 
-#### source
+## source
 - [freeCodeCamp](https://www.freecodecamp.org/learn/front-end-development-libraries/#redux)
