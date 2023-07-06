@@ -83,11 +83,122 @@ console.log("Program Ended");
 ```
 
 ## Event loop
-Node.js is a single-threaded application, but it can support concurrency via the concept of event and callbacks. Every 
-API of Node.js is asynchronous and being single-threaded, they use async function calls to maintain concurrency. Node
+Node.js is a single-threaded application, but it can support concurrency via the concept of `event` and `callbacks`. Every 
+API of Node.js is asynchronous and being single-threaded, they use `async function calls` to maintain concurrency. Node
 uses observer pattern. Node thread keeps an event loop and whenever a task gets completed, it fires the corresponding 
 event which signals the event-listener function to execute.
 
+### Event-driven programming
+Node.js uses events heavily and it is also one of the reasons why Node.js is pretty fast compared to other similar 
+technologies. As soon as Node starts its server, it simply initiates its variables, declares functions and then simply
+waits for the event to occur.
+
+In an event-driven application, there is generally a main loop that listens for events, and then triggers a callback 
+function when one of those events is detected.
+
+![event-loop](../images/nodeJS/event_loop.jpg)
+
+### Event Emitter
+
+Although events look quite similar to callbacks, the difference lies in the fact that callback functions are called when
+an asynchronous function returns its result, whereas event handling works on the observer pattern. The functions that
+listen to events act as Observers. Whenever an event gets fired, its listener function starts executing. Node.js has 
+multiple in-built events available through events module and EventEmitter class which are used to bind events and 
+event-listeners.
+
+```javascript
+// Import events module
+var events = require('events');
+
+// Create an eventEmitter object
+var eventEmitter = new events.EventEmitter();
+
+// Bind event and event  handler as follows
+eventEmitter.on('eventName', eventHandler);
+
+//Fire an event
+eventEmitter.emit('eventName');
+```
+
+Many objects in a Node emit events, for example, a net.Server emits an event each time a peer connects to it, an 
+fs.readStream emits an event when the file is opened. All objects which emit events are the instances of 
+`events.EventEmitter`.
+
+When an EventEmitter instance faces any error, it emits an 'error' event. When a new listener is added, 'newListener' 
+event is fired and when a listener is removed, 'removeListener' event is fired.
+
+EventEmitter provides multiple properties like on and emit. on property is used to bind a function with the event and 
+emit is used to fire an event.
+
+_A list with all the events can be found at [this](https://nodejs.org/api/events.html) link._
+
+## Buffers
+Pure JavaScript is Unicode friendly, but it is not so for binary data. While dealing with TCP streams or the file system,
+it's necessary to handle octet streams. Node provides Buffer class which provides instances to store raw data similar 
+to an array of integers but corresponds to a raw memory allocation outside the V8 heap.
+
+Buffer class is a global class that can be accessed in an application without importing the buffer module.
+
+### Creating a buffer
+Node Buffer can be constructed in a variety of ways.
+
+```javascript
+// create an uninitiated Buffer of 10 octets
+var buf = new Buffer(10);
+
+// create a Buffer from a given array
+var buf = new Buffer([10, 20, 30, 40, 50]);
+
+// create a Buffer from a given string and optionally encoding type
+var buf = new Buffer("Simply Easy Learning", "utf-8");
+```
+
+### Writing to buffer
+`buf.write(string[, offset][, length][, encoding])`
+
+#### Parameters
+- **string** − This is the string data to be written to buffer. 
+- **offset** − This is the index of the buffer to start writing at. Default value is 0. 
+- **length** − This is the number of bytes to write. Defaults to buffer.length. 
+- **encoding** − Encoding to use. 'utf8' is the default encoding.
+
+This method returns the number of octets written. If there is not enough space in the buffer to fit the entire string, 
+it will write a part of the string.
+
+```javascript
+buf = new Buffer(256);
+len = buf.write("Simply Easy Learning");
+
+console.log("Octets written : "+  len);
+
+// returns: Octets written: 20
+```
+
+
+
+
+#### Reading from buffer
+`buf.toString([encoding][, start][, end])`
+
+#### Parameters
+- **encoding** − Encoding to use. 'utf8' is the default encoding..
+- **start** − Beginning index to start reading, defaults to 0.
+- **end** − End index to end reading, defaults is complete buffer.
+
+This method decodes and returns a string from buffer data encoded using the specified character set encoding.
+
+```javascript
+buf = new Buffer(26);
+for (var i = 0 ; i < 26 ; i++) {
+  buf[i] = i + 97;
+}
+
+console.log( buf.toString('ascii'));       // outputs: abcdefghijklmnopqrstuvwxyz
+console.log( buf.toString('ascii',0,5));   // outputs: abcde
+console.log( buf.toString('utf8',0,5));    // outputs: abcde
+console.log( buf.toString(undefined,0,5)); // encoding defaults to 'utf8', outputs abcde
+
+```
 
 
 
