@@ -7,3 +7,4 @@ nav:
   - Node.js: 'pages/nodeJS.md'
   - jQuery: 'pages/jQuery.md'
   - Javascript Memory management: 'pages/js_memory.md'
+  - Testing: 'pages/testing.md'
